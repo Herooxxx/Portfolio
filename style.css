@@ -1,0 +1,485 @@
+/* Reset basique */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+width: 100%;
+height: 80px;
+background: #000;
+color: #fff;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 0 20px;
+}
+
+/* Logo */
+.logo a {
+color: #fff;
+text-decoration: none;
+font-size: 1.5rem;
+font-weight: bold;
+}
+
+.logo img {
+height: 60px; 
+}
+
+/* Zone boutons */
+.nav-buttons {
+display: flex;
+align-items: center;
+gap: 15px;
+}
+
+/* Bouton menu */
+.menu-btn {
+background: transparent;
+border: 2px solid #fff;
+border-radius: 5px;
+color: #fff;
+font-size: 1.2rem;
+padding: 5px 10px;
+cursor: pointer;
+}
+
+.menu-btn:hover {
+background: #fff;
+color: #000;
+transition: color 0.3s;
+}
+
+/* Le bouton d'ouverture du menu dans la barre de navigation */
+.open-menu-btn {
+background-color: transparent;
+color: white;
+border: none;
+font-size: 30px;
+cursor: pointer;
+padding: 10px 20px;
+margin-left: 20px;
+position: relative;
+z-index: 2;
+}
+
+/* Le volet qui prend toute la page */
+.full-screen-menu {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.8);
+display: none; 
+flex-direction: column;
+justify-content: center;
+align-items: center;
+z-index: 1000;
+transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Style des liens dans le volet */
+.full-screen-nav ul {
+list-style-type: none;
+padding: 0;
+text-align: center;
+}
+
+.full-screen-nav li {
+margin: 20px;
+}
+
+.full-screen-nav a {
+color: white;
+font-size: 48px;
+text-decoration: none;
+font-weight: bold;
+transition: color 0.3s ease;
+}
+
+.full-screen-nav a:hover {
+color: red;
+}
+
+/* Bouton de fermeture du menu */
+.close-menu-btn {
+position: absolute;
+top: 20px;
+right: 20px;
+background-color: transparent;
+color: white;
+font-size: 40px;
+border: none;
+cursor: pointer;
+z-index: 1001;
+}
+
+/* Section Introduction */
+.intro {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 80px;
+padding: 80px 12%;
+}
+
+/* Image à gauche */
+.intro-left img {
+max-width: 450px;
+min-width: 350px;
+width: 100%;
+border-radius: 20px;
+object-fit: cover;
+box-shadow: 0px 8px 20px rgba(0,0,0,0.35);
+}
+
+/* Texte à droite */
+.intro-right {
+max-width: 600px; 
+}
+
+.intro-right h1 {
+font-size: 2.4rem; 
+margin-bottom: 20px;
+}
+
+.intro-right p {
+font-size: 1.2rem; 
+line-height: 1.8;
+margin-bottom: 25px;
+color: #333;
+}
+
+/* Ligne séparation */
+.intro-right hr {
+border: none;
+border-top: 2px solid #bbb;
+margin: 25px 0;
+width: 100%;
+}
+
+/* Détails */
+.intro-details {
+list-style: none;
+padding: 0;
+}
+
+.intro-details li {
+margin: 10px 0;
+font-size: 1.05rem;
+}
+
+/* Bouton CV */
+.cv-btn {
+display: inline-block;
+margin-top: 25px;
+padding: 12px 25px;
+background: #000;
+color: #fff;
+text-decoration: none;
+font-size: 1.05rem;
+font-weight: bold;
+border-radius: 8px;
+transition: all 0.3s ease;
+}
+
+.cv-btn:hover {
+background: #444;
+transform: scale(1.05);
+}
+
+/* Section Parcours */
+.timeline {
+padding: 80px 12%;
+background: #f5f5f5;
+text-align: center;
+}
+
+.timeline h2 {
+font-size: 2rem;
+margin-bottom: 60px;
+color: #000;
+}
+
+/* Conteneur */
+.timeline-container {
+position: relative;
+max-width: 900px;
+margin: 0 auto;
+}
+
+/* Ligne verticale centrale */
+.timeline-container::after {
+content: '';
+position: absolute;
+width: 4px;
+background-color: #000;
+top: 0;
+bottom: 0;
+left: 50%;
+margin-left: -2px;
+}
+
+/* Item */
+.timeline-item {
+padding: 20px 40px;
+position: relative;
+width: 50%;
+}
+
+.timeline-item.left {
+left: 0;
+}
+
+.timeline-item.right {
+left: 50%;
+}
+
+/* Boîte de contenu */
+.timeline-content {
+background: #fff;
+padding: 20px;
+border-radius: 12px;
+box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+position: relative;
+}
+
+.timeline-content img {
+width: 100px;
+height: 100px;
+object-fit: cover;
+border-radius: 10px;
+margin-bottom: 10px;
+}
+
+.timeline-content h3 {
+font-size: 1.3rem;
+margin-bottom: 10px;
+color: #111;
+}
+
+.timeline-content p {
+font-size: 1rem;
+color: #444;
+line-height: 1.5;
+}
+
+/* Petits cercles sur la ligne */
+.timeline-item::before {
+content: '';
+position: absolute;
+top: 30px;
+right: -14px;
+width: 20px;
+height: 20px;
+background-color: #fff;
+border: 4px solid #000;
+border-radius: 50%;
+z-index: 1;
+}
+
+.timeline-item.right::before {
+left: -14px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+.timeline-container::after {
+left: 20px;
+}
+
+.timeline-item {
+width: 100%;
+padding-left: 60px;
+padding-right: 25px;
+}
+
+.timeline-item.right {
+left: 0%;
+}
+
+.timeline-item::before {
+left: 0;
+}
+}
+
+/* Section Projets */
+.projects {
+padding: 80px 12%;
+background: #fff;
+text-align: center;
+}
+
+.projects h2 {
+font-size: 2rem;
+margin-bottom: 50px;
+color: #111;
+}
+
+.projects-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 30px;
+}
+
+/* Carte Projet */
+.project-card {
+background: #f9f9f9;
+border-radius: 15px;
+overflow: hidden;
+box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+padding: 20px;
+transition: transform 0.3s ease;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.project-card:hover {
+transform: translateY(-8px);
+}
+
+.project-card img {
+width: 100%;
+height: 180px;
+object-fit: cover;
+border-radius: 10px;
+margin-bottom: 15px;
+}
+
+
+.project-card h3 {
+font-size: 1.3rem;
+margin-bottom: 10px;
+color: #111;
+}
+
+.project-card p {
+font-size: 1rem;
+color: #444;
+margin-bottom: 15px;
+text-align: center;
+}
+
+/* Bouton Projet */
+.project-btn {
+display: inline-block;
+padding: 10px 20px;
+background: #111;
+color: #fff;
+border-radius: 8px;
+text-decoration: none;
+transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+background: #444;
+transform: scale(1.05);
+}
+
+/* Section Contact */
+.contact {
+padding: 80px 12%;
+background: #f5f5f5;
+text-align: center;
+}
+
+.contact h2 {
+font-size: 2rem;
+margin-bottom: 40px;
+color: #111;
+}
+
+.contact-form {
+max-width: 600px;
+margin: 0 auto;
+text-align: left;
+}
+
+.form-group {
+margin-bottom: 20px;
+}
+
+.form-group label {
+display: block;
+margin-bottom: 8px;
+font-weight: bold;
+color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+width: 100%;
+padding: 12px;
+border: 2px solid #ccc;
+border-radius: 8px;
+font-size: 1rem;
+transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+border-color: #111;
+outline: none;
+}
+
+/* Bouton envoyer */
+.contact-btn {
+display: inline-block;
+padding: 12px 25px;
+background: #111;
+color: #fff;
+border: none;
+border-radius: 8px;
+font-size: 1.05rem;
+font-weight: bold;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+background: #444;
+transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+width: 100%;
+background: #111;
+color: #fff;
+text-align: center;
+padding: 20px 10px;
+margin-top: 50px;
+}
+
+.footer-icons {
+display: flex;
+justify-content: center;
+gap: 25px;
+margin-bottom: 10px;
+}
+
+.footer-icons img {
+width: 35px;
+height: 35px;
+filter: invert(1); /* rend les icônes blanches si elles sont noires */
+transition: transform 0.3s;
+cursor: pointer;
+}
+
+.footer-icons img:hover {
+transform: scale(1.2);
+}
+
+.footer-name {
+font-size: 0.9rem;
+color: #aaa;
+}
