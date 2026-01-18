@@ -1,0 +1,159 @@
+/* =========================
+   RESET BASIQUE
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+:root {
+    --color-noir: #000;
+    --color-bleumarine: #000038;
+    --color-jaune: #ffd500;
+    --color-gris: #E5E5E5;
+    --color-blanc: #FFF;
+    --max-width: 1100px;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+body {
+    background-color: var(--color-blanc);
+    color: var(--color-noir);
+    display: flex;
+    justify-content: center;
+    padding: 60px 30px;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+    background: var(--color-blanc);
+    max-width: 520px;
+    width: 100%;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 18px 45px rgba(0, 0, 56, 0.12);
+}
+
+/* =========================
+   PROFIL
+========================= */
+.profile {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.profile img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 18px;
+}
+
+.profile h1 {
+    font-size: 1.7rem;
+    color: var(--color-bleumarine);
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* =========================
+   LIENS
+========================= */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 40px;
+}
+
+.links a {
+    text-decoration: none;
+    background: var(--color-gris);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    color: var(--color-bleumarine);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: all 0.25s ease;
+}
+
+.links a:hover {
+    background: var(--color-bleumarine);
+    color: var(--color-jaune);
+}
+
+/* =========================
+   CONTACT
+========================= */
+.contact h2 {
+    font-size: 1.35rem;
+    color: var(--color-bleumarine);
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+input,
+textarea {
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid var(--color-gris);
+    font-size: 0.95rem;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--color-bleumarine);
+}
+
+textarea {
+    resize: none;
+    height: 120px;
+}
+
+/* =========================
+   BOUTON
+========================= */
+button {
+    background: var(--color-bleumarine);
+    color: var(--color-blanc);
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+button:hover {
+    background: var(--color-noir);
+    color: var(--color-jaune);
+}
+
+.form-success {
+    display: none;
+    margin-top: 15px;
+    text-align: center;
+    color: green;
+    font-weight: 600;
+}

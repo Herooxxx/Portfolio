@@ -1,30 +1,25 @@
-// Gère le volet déroulant
-const openMenuBtn = document.getElementById('open-menu-btn');
-const closeMenuBtn = document.getElementById('close-menu-btn');
-const fullScreenMenu = document.getElementById('full-screen-menu');
+const form = document.getElementById("contact-form");
+const successMessage = document.getElementById("form-success");
 
-// Ouvrir le menu
-openMenuBtn.addEventListener('click', () => {
-  fullScreenMenu.style.display = 'flex';  
-  setTimeout(() => { 
-    fullScreenMenu.style.opacity = 1; 
-  }, 10);
-});
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-// Fermer le menu
-closeMenuBtn.addEventListener('click', () => {
-  fullScreenMenu.style.opacity = 0; 
-  setTimeout(() => {
-    fullScreenMenu.style.display = 'none'; 
-  }, 300); 
-});
+    const formData = new FormData(form);
 
-// Fermer le menu si on clique en dehors
-window.addEventListener('click', (e) => {
-  if (e.target === fullScreenMenu) {
-    fullScreenMenu.style.opacity = 0;
-    setTimeout(() => {
-      fullScreenMenu.style.display = 'none';
-    }, 300);
-  }
+    fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+            "Accept": "application/json"
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            successMessage.style.display = "block";
+            form.reset();
+        }
+    })
+    .catch(error => {
+        console.error("Erreur lors de l’envoi :", error);
+    });
 });

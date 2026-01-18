@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Emilien</title>
+    <link rel="icon" type="image/png" href="img/icone.png">
+    <link rel="stylesheet" href="style_contact.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- PROFIL -->
+        <section class="profile">
+            <img src="img/portrait.png" alt="Photo de profil">
+            <h1>Emilien</h1>
+            <p class="subtitle">Développeur / Étudiant</p>
+        </section>
+
+        <!-- LIENS -->
+        <section class="links">
+            <a href="index.html">Portfolio</a>
+            <a href="https://www.linkedin.com/in/e-montaret-842394385" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Herooxxx" target="_blank">GitHub</a>
+            <a href="Montaret_Emilien_CV.pdf" target="_blank" download aria-label="Télécharger CV">Télécharger mon
+                CV</a>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="contact">
+            <h2>Me contacter</h2>
+
+            <form id="contact-form" action="https://formspree.io/f/mqadvgql" method="POST">
+                <input type="text" name="nom" placeholder="Nom" required>
+
+                <input type="text" name="prenom" placeholder="Prénom" required>
+
+                <input type="email" name="email" placeholder="Email" required>
+
+                <input type="tel" name="telephone" placeholder="Numéro de téléphone" pattern="^(\+33|0)[1-9](\d{2}){4}$"
+                    required>
+
+                <textarea name="message" placeholder="Votre message" required></textarea>
+
+                <input type="hidden" name="_subject" value="Nouveau message depuis le site">
+                <input type="hidden" name="_template" value="table">
+
+                <button type="submit">Envoyer le message</button>
+
+                <p class="form-success" id="form-success">
+                    Votre message a bien été envoyé !✅
+                </p>
+            </form>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
